@@ -2,10 +2,10 @@
 * @Author: jensen
 * @Date:   2018-04-04 10:17:18
 * @Last Modified by:   jensen
-* @Last Modified time: 2018-04-04 14:48:37
+* @Last Modified time: 2018-04-04 16:56:10
 */
 
-// 引入外部模块
+// 引入nodejs模块
 const path = require('path')  //path.resolve（）方法将一系列路径或路径段解析为绝对路径
 
 // 引入插件基于commonjs的require  require的插件都是来源于yarn add webapck -D时依赖进来的
@@ -19,7 +19,7 @@ const UglifyPlugin = require('uglifyjs-webpack-plugin')
 
 
 /** 使用__dirname变量获取当前模块文件所在目录的完整绝对路径 */
-function reslove(dir){
+function resolve(dir){
 	return path.join(__dirname, '..', dir)   // join方法就是简单的将dirname ..  dir进行拼接 reslove则是完整的绝对路径
 }
 
@@ -37,7 +37,7 @@ module.exports = {
 		 * 多文件作为一个入口可以用数组的方式eg: main:['index1.js','index2.js']
 		 * 多入口  eg:  main: 'path1', foo: 'path2'
 		 */
-		main: './src/index.js' 
+		app:'./src/index.js' 
 	},
 	output: {
 		/**
@@ -45,7 +45,8 @@ module.exports = {
 		 * @path 路径
 		 * @filename  文件名
 		 */
-		path: reslove('dist'), //指定输出路径
+		path: resolve('/dist/[hash]'), //指定输出路径
+		filename: '[name].js'
 	},
 	module: {
 		rules: [
