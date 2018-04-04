@@ -2,7 +2,7 @@
 * @Author: jensen
 * @Date:   2018-04-04 10:17:18
 * @Last Modified by:   jensen
-* @Last Modified time: 2018-04-04 13:40:40
+* @Last Modified time: 2018-04-04 14:36:21
 */
 
 // 引入外部模块
@@ -20,7 +20,7 @@ const UglifyPlugin = require('uglifyjs-webpack-plugin')
 
 /** 使用__dirname变量获取当前模块文件所在目录的完整绝对路径 */
 function reslove(dir){
-	return path.join(__dirname, '..', dir)   // ..相对路径
+	return path.join(__dirname, '..', dir)   // join方法就是简单的将dirname ..  dir进行拼接
 }
 
 // webpack config
