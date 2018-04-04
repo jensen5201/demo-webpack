@@ -1,0 +1,20 @@
+{
+  "name": "demo-webpack",
+  "version": "1.0.0",
+  "description": "a webapck proj",
+  "main": "''",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production"
+  },
+  "keywords": [
+    "webpack",
+    "webpack-cli"
+  ],
+  "author": "jensen",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13"
+  }
+}
